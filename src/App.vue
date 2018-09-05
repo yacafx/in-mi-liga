@@ -4,7 +4,7 @@
     <b-container>
       <b-row>
         <b-col>
-          <b-button variant="success" class="float-right new-btn">
+          <b-button v-b-modal="'myModal'" variant="success" class="float-right new-btn">
             <v-icon class="icon" name="plus" />
             Agregar Equipo
           </b-button>
@@ -17,7 +17,10 @@
       </b-row>
     </b-container>
 
-
+   <b-modal id="myModal" title="Nuevo Equipo" footer-class="mymodal-footer">
+     <div slot="modal-footer">
+      </div>
+   </b-modal>
 
   </div>
 </template>
@@ -92,5 +95,9 @@ export default {
 
 .icon {
   margin-right: 5px;
+}
+
+.mymodal-footer {
+  display: none !important;
 }
 </style>
