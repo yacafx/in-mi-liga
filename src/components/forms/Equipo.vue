@@ -1,7 +1,7 @@
 <template>
-  <b-modal id="myModal" title="Nuevo Equipo" body-class="mymodal-body" footer-class="mymodal-footer">
+  <b-modal id="myModal" title="Nuevo Equipo" ref="myModal" body-class="mymodal-body" footer-class="mymodal-footer">
 
-    <b-form v-if="show" @reset="onReset">
+    <b-form v-if="show" @submit="onSubmit" @reset="onReset">
       <b-form-group label="Nombre:" description="Escribe el nombre del equipo">
         <b-form-input v-model="form.nombre"
                         required
@@ -29,6 +29,7 @@
 
         <div class="form-actions float-right">
           <b-button type="reset" variant="danger">Limpiar</b-button>
+          <b-button type="submit" variant="primary">Enviar</b-button>
         </div>
     </b-form>
 
@@ -58,6 +59,11 @@ export default {
     }
   },
   methods: {
+    onSubmit(evt){
+      evt.preventDefault();
+      alert(JSON.stringify(this.form));
+       this.$refs.myModal.hide();
+    },
     onReset(evt){
 
       evt.preventDefault();
