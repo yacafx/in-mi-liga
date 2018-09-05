@@ -3,8 +3,16 @@
 
     <b-container>
       <b-row>
+        <b-col>
+          <b-button variant="success" class="float-right new-btn">
+            <v-icon class="icon" name="plus" />
+            Agregar Equipo
+          </b-button>
+        </b-col>
+      </b-row>
+      <b-row>
         <b-col v-for="(equipo, index) in equipos" :key='index'>
-           <Equipo :info="equipo" />
+          <Equipo :info="equipo" />
         </b-col>
       </b-row>
     </b-container>
@@ -63,7 +71,7 @@ export default {
           jugadores: [{ jugador: "1" }, { jugador: "1" }]
         }
       ]
-   }
+    }
   }
 }
 </script>
@@ -76,5 +84,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.new-btn {
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-right: 5px;
 }
 </style>
