@@ -17,10 +17,9 @@
       </b-row>
     </b-container>
 
-   <b-modal id="myModal" title="Nuevo Equipo" footer-class="mymodal-footer">
-     <div slot="modal-footer">
-      </div>
-   </b-modal>
+
+
+  <equipo-frm></equipo-frm>
 
   </div>
 </template>
@@ -28,12 +27,14 @@
 <script>
 
 import Equipo from "./components/Equipo.vue";
+import FormEquipo from "./components/forms/Equipo.vue";
 
 
 export default {
   name: 'app',
   components: {
-    Equipo
+    Equipo,
+    "equipo-frm": FormEquipo
   },
   data() {
     return {
