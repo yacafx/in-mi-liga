@@ -1,7 +1,7 @@
 <template>
   <b-modal id="myModal" title="Nuevo Equipo" body-class="mymodal-body" footer-class="mymodal-footer">
 
-    <b-form v-if="show">
+    <b-form v-if="show" @reset="onReset">
       <b-form-group label="Nombre:" description="Escribe el nombre del equipo">
         <b-form-input v-model="form.nombre"
                         required
@@ -26,6 +26,10 @@
             <b-form-radio value="true">Activo</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
+
+        <div class="form-actions float-right">
+          <b-button type="reset" variant="danger">Limpiar</b-button>
+        </div>
     </b-form>
 
     <div slot="modal-footer">
@@ -51,6 +55,22 @@ export default {
         "Jugador 5"
       ],
       show: true
+    }
+  },
+  methods: {
+    onReset(evt){
+
+      evt.preventDefault();
+
+      this.form.nombre = "";
+      this.form.logo = "";
+      this.form.jugadores = [];
+      this.form.estado = false;
+
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
     }
   }
 }
