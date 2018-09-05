@@ -62,7 +62,8 @@ export default {
     onSubmit(evt){
       evt.preventDefault();
       alert(JSON.stringify(this.form));
-       this.$refs.myModal.hide();
+      this.$emit("new_team", this.form);
+      this.$refs.myModal.hide();
     },
     onReset(evt){
 
@@ -83,6 +84,10 @@ export default {
 </script>
 
 <style>
+.mymodal-body .form-actions > button {
+  margin-right: 10px;
+}
+
 .mymodal-body .col-form-label {
   text-align: left;
 }

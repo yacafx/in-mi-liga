@@ -19,7 +19,7 @@
 
 
 
-  <equipo-frm></equipo-frm>
+  <equipo-frm @new_team="onNewteam"></equipo-frm>
 
   </div>
 </template>
@@ -76,7 +76,13 @@ export default {
         }
       ]
     }
+  },
+  methods:{
+    onNewteam(equipo) {
+      this.equipos.push(Object.assign({}, equipo));
+    }
   }
+
 }
 </script>
 
