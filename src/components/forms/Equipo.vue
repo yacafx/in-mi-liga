@@ -1,8 +1,10 @@
 <template>
- <b-modal id="myModal" title="Nuevo Equipo" footer-class="mymodal-footer">
-     <div slot="modal-footer">
+  <b-modal id="myModal" title="Nuevo Equipo" footer-class="mymodal-footer">
+
+
+    <div slot="modal-footer">
       </div>
-   </b-modal>
+  </b-modal>
 </template>
 
 <script>
