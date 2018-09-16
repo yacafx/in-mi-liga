@@ -1,6 +1,6 @@
 # Mi Liga
 
-## VUE App
+### VUE App
 
 ## Project setup
 
